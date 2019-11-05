@@ -1,0 +1,128 @@
+<!Doctype html>
+<html>
+<head>
+  <title>Animation Like Button using css</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #default{
+      font-size: 30px;
+    }
+    .liked{
+        color:blue;
+        font-size: 30px;
+        -webkit-animation: bounce 2s linear;
+        -moz-animation: bounce 2s linear;
+        animation: bounce 2s linear;
+        vertical-align: middle;
+        height: 30px;
+    }
+    .unlike{
+        color:#000;
+        font-size: 30px;
+        -webkit-animation: bounce 2s linear;
+        -moz-animation: bounce 2s linear;
+        animation: bounce 2s linear;
+        vertical-align: middle;
+        height: 30px;
+    }
+   
+    @-moz-keyframes bounce {
+      25% {
+          -webkit-transform: scale(1.2) rotate(-45deg);
+          transform: scale(1.2) rotate(-45deg);
+          zoom: 5;
+      };
+      50% {
+          -webkit-transform: scale(1.2) rotate(0deg);
+          transform: scale(1.2) rotate(0deg)
+          zoom: 10;
+      };
+      75% {
+          -webkit-transform: rotate(-45deg);
+          transform: scale(1.2) rotate(-45deg)
+          zoom: 5;
+      };
+      100% {
+          -webkit-transform: rotate(0deg);
+          transform: scale(1.2) rotate(0deg)
+          zoom: 0;
+      };
+    }
+
+    @-webkit-keyframes bounce {
+      25% {
+          -webkit-transform: scale(1.2) rotate(-45deg);
+          transform: scale(1.2) rotate(-45deg)
+      };
+      50% {
+          -webkit-transform: scale(1.2) rotate(0deg);
+          transform: scale(1.2) rotate(0deg)
+      };
+      75% {
+          -webkit-transform: scale(1.2) rotate(-45deg);
+          transform: scale(1.2) rotate(-45deg)
+      };
+      100% {
+          -webkit-transform: scale(1.2) rotate(0deg);
+          transform: scale(1.2) rotate(0deg)
+      };
+    }
+
+    @keyframes bounce {
+      25% {
+          -webkit-transform: scale(1.2) rotate(-45deg);
+          transform: scale(1.2) rotate(-45deg)
+      };
+      50% {
+          -webkit-transform: scale(1.2) rotate(0deg);
+          transform: scale(1.2) rotate(0deg)
+      };
+      75% {
+          -webkit-transform: scale(1.2) rotate(-45deg);
+          transform: scale(1.2) rotate(-45deg)
+      };
+      100% {
+          -webkit-transform: scale(1.2) rotate(0deg);
+          transform: scale(1.2) rotate(0deg)
+      };
+    }
+    .hide, #like{
+      display: none;
+    }
+    .show{
+        display: block !important;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="default"><i class="fa fa fa-thumbs-up" onclick="defaultLike()"></i></div>
+    <div id="like"><i class="fa fa fa-thumbs-up" onclick="liked()"></i></div>
+  </div>
+  <script>
+    function defaultLike(){
+      var normal = document.getElementById('default'); 
+      normal.classList.add("hide"); 
+      var like = document.getElementById('like'); 
+      like.classList.add("show"); 
+      like.classList.add("liked"); 
+    }
+    function liked(){
+      var normal = document.getElementById('default'); 
+      normal.classList.remove("hide"); 
+      normal.classList.add("unlike");
+      var like = document.getElementById('like'); 
+      like.classList.remove("show"); 
+      like.classList.remove("liked"); 
+    }
+  </script>
+</body>
+</html>
